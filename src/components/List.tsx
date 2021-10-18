@@ -1,8 +1,8 @@
 import React from 'react';
 import TodoItem from '../iterfaces/TodoItem';
-import IProps from '../iterfaces/IProps';
+import IProps from '../iterfaces/IPropsList';
 
-const List: React.FC<IProps> = ({ list, setList }: IProps) => {
+const List: React.FC<IProps> = ({ filterList, list, setList }: IProps) => {
 
     const deleteHandle = (element: TodoItem) => {
         const remainderTodo : TodoItem[] = list?.filter((el: TodoItem) => el !== element);
@@ -27,7 +27,7 @@ const List: React.FC<IProps> = ({ list, setList }: IProps) => {
     return (
         <div>
             <ul className="view">
-                {list?.map((item: TodoItem) => {
+                {filterList?.map((item: TodoItem) => {
                     return (
                         <div key={item.id} className="todo-list">
                             <li className={item.status ? "completed" : ""}>

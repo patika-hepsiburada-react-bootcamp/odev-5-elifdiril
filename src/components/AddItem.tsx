@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import IProps from '../iterfaces/IProps';
+import IProps from '../iterfaces/IPropsAdd';
 import TodoItem from '../iterfaces/TodoItem';
 
 const AddItem: React.FC<IProps> = ({ list, setList }: IProps) => {
@@ -42,7 +42,7 @@ const AddItem: React.FC<IProps> = ({ list, setList }: IProps) => {
                     <input className="toggle-all" type="checkbox" checked={toggleAll} onChange={handleToggleAll} />
                     Mark all as complete
                 </label>}
-                <input value={item} onChange={handleChange} autoFocus placeholder="What needs to be done?" />
+                <input value={item} className="new-todo" onChange={handleChange} autoFocus placeholder="What needs to be done?" />
             </form>
         </div>
     );
