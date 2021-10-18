@@ -106,26 +106,22 @@ body {
 	bottom: 100%;
 }
 
-.toggle-all + label {
-	width: 60px;
+.toggle-all-label {
+	width: 10px;
 	height: 34px;
 	font-size: 0;
 	position: absolute;
-	top: -52px;
-	left: -13px;
+	top: -10px;
+	left: 40px;
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
-.toggle-all + label:before {
+.toggle-all-label:before {
 	content: '❯';
 	font-size: 22px;
 	color: #e6e6e6;
 	padding: 10px 27px 10px 27px;
-}
-
-.toggle-all:checked + label:before {
-	color: #737373;
 }
 
 .todo-list {
@@ -216,6 +212,8 @@ body {
 	margin: auto 0;
 	font-size: 30px;
 	color: #cc9a9a;
+	background-color: white;
+	border: none;
 	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
 }
