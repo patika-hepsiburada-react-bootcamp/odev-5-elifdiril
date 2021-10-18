@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import IPropsFilter from '../iterfaces/IPropsFilter';
 import TodoItem from '../iterfaces/TodoItem';
 
-const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, setFilterList }: IPropsFilter) => {
+const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, setList, setFilterList }: IPropsFilter) => {
     const [itemLeft, setItemLeft] = useState<number>(list?.length || 0);
 
     const onClickFilter = ({ target }: React.MouseEvent) => {
@@ -20,13 +20,18 @@ const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, s
         if (activeFilter === 'all') {
             setFilterList(list)
         }
-        else if(activeFilter === 'active'){
+        else if (activeFilter === 'active') {
             setFilterList(list.filter((el: TodoItem) => !el.status))
         }
-        else if(activeFilter === 'completed'){
+        else if (activeFilter === 'completed') {
             setFilterList(list.filter((el: TodoItem) => el.status))
         }
-    }, [list, activeFilter])
+    }, [list, activeFilter, setFilterList]);
+
+    const onClickClearCompleted = () => {
+        const clearCompletedTodo = list.filter((el: TodoItem) => !el.status);
+        setList(clearCompletedTodo);
+    }
 
     return (
         <div className="footer">
@@ -51,7 +56,7 @@ const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, s
                 </li>
             </ul>
             <button hidden={list.length === 0}
-                className="clear-completed" >
+                className="clear-completed" onClick={onClickClearCompleted}>
                 Clear completed
             </button>
         </div>

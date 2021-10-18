@@ -21,7 +21,7 @@ function App(): JSX.Element {
       <h1 className="header">Todos</h1>
       <AddItem list={list} setList={setList} />
       <List filterList={filterList} list={list} setList={setList} />
-      <Footer list={list} activeFilter={activeFilter} setActiveFilter={setActiveFilter} setFilterList={setFilterList} />
+      <Footer list={list} setList={setList} activeFilter={activeFilter} setActiveFilter={setActiveFilter} setFilterList={setFilterList} />
     </div>
   );
 }
