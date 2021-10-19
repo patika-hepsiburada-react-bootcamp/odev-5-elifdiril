@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import IProps from '../iterfaces/IPropsAdd';
+import IProps from '../iterfaces/IPropsItems';
 import TodoItem from '../iterfaces/TodoItem';
 
 const AddItem: React.FC<IProps> = ({ list, setList }: IProps) => {

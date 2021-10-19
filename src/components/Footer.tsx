@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import IPropsFilter from '../iterfaces/IPropsFilter';
+import IPropsFooter from '../iterfaces/IPropsFooter';
 import TodoItem from '../iterfaces/TodoItem';
 
-const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, setList, setFilterList }: IPropsFilter) => {
+const Footer: React.FC<IPropsFooter> = ({ activeFilter, setActiveFilter, list, setList, setFilterList }: IPropsFooter) => {
     const [itemLeft, setItemLeft] = useState<number>(list?.length || 0);
 
     const onClickFilter = ({ target }: React.MouseEvent) => {
@@ -15,8 +15,10 @@ const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, s
             const remainderItem: number = list?.filter((el: TodoItem) => !el.status).length;
             setItemLeft(remainderItem)
         }
+        //For Footer, shows how many items left not completed
         calcItems();
 
+        // Filters start
         if (activeFilter === 'all') {
             setFilterList(list)
         }
@@ -26,6 +28,7 @@ const Footer: React.FC<IPropsFilter> = ({ activeFilter, setActiveFilter, list, s
         else if (activeFilter === 'completed') {
             setFilterList(list.filter((el: TodoItem) => el.status))
         }
+        // Filters end
     }, [list, activeFilter, setFilterList]);
 
     const onClickClearCompleted = () => {

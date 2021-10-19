@@ -4,11 +4,13 @@ import IProps from '../iterfaces/IPropsList';
 
 const List: React.FC<IProps> = ({ filterList, list, setList }: IProps) => {
 
+    // Delete items from list
     const deleteHandle = (element: TodoItem) => {
         const remainderTodo : TodoItem[] = list?.filter((el: TodoItem) => el !== element);
         setList(remainderTodo);
     }
 
+    //check done or undo it
     const checkButtonHandle = (id: number) => {
         const newList = list.map((item: TodoItem) => {
             if (item.id === id) {
