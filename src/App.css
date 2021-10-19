@@ -293,11 +293,11 @@ body {
 	cursor: pointer; /* Because of Mavo: we don't use the href attribute in such situations */
 }
 
-.filters li a:hover {
+.filters li button:hover {
 	border-color: rgba(175, 47, 47, 0.1);
 }
 
-.filters li a.selected {
+.filters li button.selected {
 	border-color: rgba(175, 47, 47, 0.2);
 }
 

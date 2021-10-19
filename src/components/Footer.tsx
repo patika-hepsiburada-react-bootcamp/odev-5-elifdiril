@@ -43,17 +43,17 @@ const Footer: React.FC<IPropsFooter> = ({ activeFilter, setActiveFilter, list, s
             </span>
             <ul className="filters">
                 <li>
-                    <button className={activeFilter === 'all' ? 'completed' : 'selected'}
+                    <button className={activeFilter === 'all' ? 'selected' : 'completed'}
                         onClick={(e) => onClickFilter(e)}
                         name='all'>All</button>
                 </li>
                 <li>
-                    <button className={activeFilter === 'active' ? 'completed' : 'selected'}
+                    <button className={activeFilter === 'active' ? 'selected' : 'completed'}
                         onClick={(e) => onClickFilter(e)}
                         name='active'>Active</button>
                 </li>
                 <li>
-                    <button className={activeFilter === 'completed' ? 'completed' : 'selected'}
+                    <button className={activeFilter === 'completed' ? 'selected' : 'completed'}
                         onClick={(e) => onClickFilter(e)}
                         name='completed'>Completed</button>
                 </li>
