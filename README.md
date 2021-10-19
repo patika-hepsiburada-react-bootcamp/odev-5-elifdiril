@@ -1,5 +1,6 @@
 # Ödev 5
 
+## [live on netlify](https://todo-app-patika-hb.netlify.app/)
 
 ## Gereksinimler
   - Aşağıda çalışır hali paylaşılan uygulamayı bir React uygulaması olarak geliştirmek. 
